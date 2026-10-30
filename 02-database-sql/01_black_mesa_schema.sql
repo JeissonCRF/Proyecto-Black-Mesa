@@ -33,7 +33,7 @@ department_id varchar(10),
 foreign key (department_id) references Departments(department_id)
 );
 create table Accounting_Ledger( --Es el libro mayor--
-ledger_id int auto_increment primary key,
+ledger_id serial primary key, -- investigando, aprendí que "auto_increment" es una sintaxis inexistente en Postgre --
 entry_date date not null,
 account_id int not null,
 foreign key (account_id) references Chart_of_Accounts(account_id),
